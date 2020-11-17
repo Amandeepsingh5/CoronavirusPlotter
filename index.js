@@ -2,7 +2,7 @@
 
 
 function updateMap(){
-
+console.log("Updating map with the real time data")
 fetch("data.json")
 .then(response => response.json())
 .then(rsp => {
@@ -38,5 +38,8 @@ new mapboxgl.Marker({
 
 }
 
+let interval = 12000;
+
+setInterval(updateMap,interval);
 
 updateMap();
